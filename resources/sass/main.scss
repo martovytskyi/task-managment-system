@@ -1,0 +1,100 @@
+.tasks {
+    color: white;
+    text-align: center;
+    h3 {
+        border-radius: 6px;
+        margin: 14px 0;
+        font-size: 20px;
+    }
+    .count-tasks {
+        float: left;
+        padding: 0.375rem;
+        font-size: 18px;
+        color: #212529;
+        .number {
+            font-weight: bold;
+        }
+    }
+    .status-count {
+        font-size: 20px;
+    }
+    .task-title {
+        padding: 10px;
+    }
+    .card-footer .btn {
+        min-width: 90px;
+        padding: 4px 0;
+    }
+    .desc {
+        text-align: left;
+    }
+}
+
+form .card-footer {
+    text-align: center;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 14px;
+}
+
+.item-logout {
+    display: flex;
+    align-items: center;
+}
+
+.logout {
+    color: #212529;
+}
+
+.create {
+    float: right;
+}
+
+.error-block {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.invalid-tooltip {
+    color: #dc3545;
+    left: 0;
+    right: 0;
+    margin-top: 0;
+    padding: 0 10px;
+    text-align: center;
+    background: none;
+}
+
+.task-form form {
+    max-width: 700px;
+    margin: auto;
+}
+
+.task-form {
+    label {
+        font-size: 16px;
+    }
+}
+
+.breadcrumb {
+    text-align: center;
+    margin: 0;
+    justify-content: center;
+    width: 100%;
+}
+
+.card-body {
+    word-break: break-word;
+}
+
+.datepicker td, .datepicker th {
+    padding: 6px;
+}
+
+.datepicker, .datepicker table {
+    min-width: 300px;
+    margin: auto;
+}
