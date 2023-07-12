@@ -9,19 +9,20 @@
 
 1 - Клонуйте репозиторій з GitHub:
 
-git clone https://github.com/martovytskyi/task-managment-system.git
+	git clone https://github.com/martovytskyi/task-managment-system.git
+
 
 2 - Встановіть залежності за допомогою Composer:
 
-composer install
+	composer install
 
 3 - Встановіть залежності JavaScript за допомогою NPM або Yarn:
 
-npm install
+	npm install
 
 або 
 
-yarn install
+	yarn install
 
 4 - Налаштуйте дані для з'єднання з базою даних в файлі .env.
 
@@ -29,13 +30,17 @@ yarn install
 
 5 - Виконайте міграцію бази даних:
 
-php artisan migrate
+	php artisan migrate
 
 6 - запустіть розробничий сервер:
 
-php artisan serve
+	php artisan serve
 
-Проект буде доступний за адресою http://localhost:8000.
+Після цього проект буде доступний за адресою вказаною в терміналі serve. Наприклад: Server running on [http://127.0.0.1:8000].
+
+7 - запустіть для початку роботи VITE 
+
+	npm run dev
 
 ## Використання
 
