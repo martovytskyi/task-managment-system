@@ -7,10 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Task extends Model
 {
-    public const NOT_STARTED = 'not_started';
-    public const IN_PROGRESS = 'in_progress';
-    public const COMPLETED = 'completed';
-
     protected $fillable = [
         'user_id',
         'title',
@@ -19,15 +15,31 @@ class Task extends Model
         'deadline',
     ];
 
+    public const TASK_STATUSES = [
+        TaskStatus::class,
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);
     }
 
-    public const TASK_STATUSES = [
-        self::NOT_STARTED,
-        self::IN_PROGRESS,
-        self::COMPLETED
-    ];
+    /**
+     * @param $value
+     * @return TaskStatus
+     */
+    public function getStatusAttribute($value): TaskStatus
+    {
+        return new TaskStatus($value);
+    }
+
+    /**
+     * @param $status
+     * @return void
+     */
+    public function setStatusAttribute($status): void
+    {
+        $this->attributes['status'] = $status;
+    }
 }
 

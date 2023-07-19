@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\TaskStatus;
 use App\Models\Task;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Contracts\View\View;
@@ -54,7 +55,7 @@ class TaskController extends Controller
         $task->user_id = $user->id;
         $task->title = $request->input('title');
         $task->description = $request->input('description');
-        $task->status = $request->input('status') ?? Task::NOT_STARTED;
+        $task->status = $request->input('status') ?? \App\Enums\TaskStatus::NOT_STARTED();
         $task->deadline = $request->input('deadline');
         $task->save();
 
@@ -96,7 +97,7 @@ class TaskController extends Controller
 
         $task->title = $request->input('title');
         $task->description = $request->input('description');
-        $task->status = $request->input('status') ?? Task::NOT_STARTED;
+        $task->status = TaskStatus::from($request->input('status'));
         $task->deadline = $request->input('deadline');
         $task->save();
 

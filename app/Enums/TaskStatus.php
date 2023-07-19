@@ -4,35 +4,19 @@ namespace App\Enums;
 
 use Spatie\Enum\Enum;
 
+/**
+ * @method static self NOT_STARTED()
+ * @method static self IN_PROGRESS()
+ * @method static self COMPLETED()
+ */
 class TaskStatus extends Enum
 {
-    public static function notStarted(): TaskStatus
+    public static function toSelectArray(): array
     {
-        return new class () extends TaskStatus {
-            public function getValue(): string
-            {
-                return 'not_started';
-            }
-        };
-    }
-
-    public static function inProgress(): TaskStatus
-    {
-        return new class () extends TaskStatus {
-            public function getValue(): string
-            {
-                return 'in_progress';
-            }
-        };
-    }
-
-    public static function completed(): TaskStatus
-    {
-        return new class () extends TaskStatus {
-            public function getValue(): string
-            {
-                return 'completed';
-            }
-        };
+        return [
+            'NOT_STARTED' => 'not_started',
+            'IN_PROGRESS' => 'in_progress',
+            'COMPLETED' => 'completed',
+        ];
     }
 }

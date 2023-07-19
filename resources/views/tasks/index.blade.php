@@ -9,9 +9,9 @@
             </div>
             <div class="col">
                 <h3 class="bg-warning task-title">{{ __('lang.not_started') }}
-                    <span class="status-count">({{ count($tasks->where('status', \App\Models\Task::NOT_STARTED)) }})</span>
+                    <span class="status-count">({{ $tasks->where('status', \App\Enums\TaskStatus::NOT_STARTED())->count() }})</span>
                 </h3>
-                @foreach ($tasks->where('status', \App\Models\Task::NOT_STARTED) as $task)
+                @foreach ($tasks->where('status', \App\Enums\TaskStatus::NOT_STARTED()) as $task)
                     <div class="card mb-3">
                         <div class="card-body">
                             <h3 class="card-title">{{ mb_strimwidth($task->title, 0, 24, "...") }}</h3>
@@ -31,9 +31,9 @@
             </div>
             <div class="col">
                 <h3 class="bg-info task-title">{{ __('lang.in_progress') }}
-                    <span class="status-count">({{ count($tasks->where('status', \App\Models\Task::IN_PROGRESS)) }})</span>
+                    <span class="status-count">({{ $tasks->where('status', \App\Enums\TaskStatus::IN_PROGRESS())->count() }})</span>
                 </h3>
-                @foreach ($tasks->where('status', \App\Models\Task::IN_PROGRESS) as $task)
+                @foreach ($tasks->where('status', \App\Enums\TaskStatus::IN_PROGRESS()) as $task)
                     <div class="card mb-3">
                         <div class="card-body">
                             <h3 class="card-title">{{ mb_strimwidth($task->title, 0, 24, "...") }}</h3>
@@ -53,9 +53,9 @@
             </div>
             <div class="col">
                 <h3 class="bg-success task-title">{{ __('lang.completed') }}
-                    <span class="status-count">({{ count($tasks->where('status', \App\Models\Task::COMPLETED)) }})</span>
+                    <span class="status-count">({{ $tasks->where('status', \App\Enums\TaskStatus::COMPLETED())->count() }})</span>
                 </h3>
-                @foreach ($tasks->where('status', \App\Models\Task::COMPLETED) as $task)
+                @foreach ($tasks->where('status', \App\Enums\TaskStatus::COMPLETED()) as $task)
                     <div class="card mb-3">
                         <div class="card-body">
                             <h3 class="card-title">{{ mb_strimwidth($task->title, 0, 24, "...") }}</h3>

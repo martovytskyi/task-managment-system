@@ -39,9 +39,11 @@
                                 <label for="status">{{ __('lang.status') }}</label>
                                 <select class="form-control @error('status') is-invalid @enderror" name="status"
                                         id="status" required>
-                                    @foreach (\App\Models\Task::TASK_STATUSES as $status)
+                                    @foreach (\App\Enums\TaskStatus::toArray() as $key => $status)
                                         <option
-                                            value="{{ $status }}" {{ old('status') == $status ? 'selected' : '' }}>{{ __('lang.' . $status) }}</option>
+                                            value="{{ $status }}" {{ old('status') == $status ? 'selected' : '' }}>
+                                            {{ __('lang.' . strtolower($status)) }}
+                                        </option>
                                     @endforeach
                                 </select>
                                 @error('status')
